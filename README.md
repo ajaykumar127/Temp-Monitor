@@ -1,7 +1,6 @@
 [Temp Monitor](https://temp-monitor.herokuapp.com/)
 ============
 
-Website: [https://temp-monitor.herokuapp.com/](https://temp-monitor.herokuapp.com/)
 Is your temperature at the legal limit?
 
 This is a networked temperature monitor for Tom Igoe's [Understanding Networks](itp.nyu.edu/understandingnetworks/Class/Fall2013) class. 
@@ -20,3 +19,4 @@ The server expects RESTful HTTP calls to trigger saving and querying events: `<s
 Project made by [Sergio](https://github.com/sergiomajluf), [Donna](https://github.com/dcmillerwatts) and [Allison](https://github.com/allisonburtch).
 
 
+Website: [https://temp-monitor.herokuapp.com/](https://temp-monitor.herokuapp.com/)
