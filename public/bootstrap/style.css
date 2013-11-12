@@ -1537,11 +1537,15 @@ a.dropdown-toggle:after{
 /* Inner / Outer Temp */
 .weather-innerOuter{
 }
-.itemAllison{
+.itemAllison,
+.itemDonna,
+.itemSergio{
 	list-style: none;
 	display: none;
 }
-.itemAllison.active{
+.itemAllison.active,
+.itemDonna.active,
+.itemSergio.active{
 	display: block;
 }
 
@@ -1555,17 +1559,17 @@ div.insideTemp {
 	font-size: 30px;
     font-weight: 60000;
     color: #3a8081;
-    line-height: 4em;
+    line-height: 4.2em;
     position: relative;
     float: left;
-    text-indent: 7px;
+    text-indent: -20px;
 }
 
 div.outsideTemp {
     color: #fff;
     position: absolute;
-    top: -15px;
-    left: 175px;
+    top: -12px;
+    left: 190px;
     font-size: 20px;
 }
 
@@ -1607,6 +1611,7 @@ div.outsideTemp {
     border-bottom: 1px solid rgba(242,251,251,0.2);
 	background-color: rgba(255,255,255,0.68);
 	color: #437777;
+	text-align: center;
 }
 .weather-search-form{
     float: right;
@@ -1684,6 +1689,29 @@ input.weather-search-submit{
 .weather-forecast .icon-weather-3{background-position: 0 -48px;}
 .weather-forecast .icon-weather-4{background-position: 0 -72px;}
 .weather-forecast .icon-weather-5{background-position: 0 -96px;}
+
+/*-----------------------------------*/
+/* Main Conten						 */
+/*-----------------------------------*/
+
+#mainContent {
+}
+
+#mainContent table.table.table-striped.table-hover {
+	background-color: #feffff;
+}
+
+#mainContent h2 {
+	margin-top: 0px;
+	background: #fff;
+	padding: 10px 5px;
+}
+
+#map-canvas {
+width: 90%;
+width: 200px;	
+}
+
 
 /*-----------------------------------*/
 /* Image Slider */

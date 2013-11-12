@@ -68,15 +68,15 @@ jQuery(document).ready(function() {
     });
     $('#donna.weather-forecast li a').click(function() {
         var day = $(this).attr('id');
-        $('#donna.weather-forecast li a, #donna.weather-item').removeClass('active');
+        $('#donna.weather-forecast li a, .itemDonna').removeClass('active');
         $(this).addClass('active');
-        $('#donna.weather-item.'+day).addClass('active');
+        $('.itemDonna.'+day).addClass('active');
     });
     $('#sergio.weather-forecast li a').click(function() {
         var day = $(this).attr('id');
-        $('#sergio.weather-forecast li a, #sergio.weather-item').removeClass('active');
+        $('#sergio.weather-forecast li a, .itemSergio').removeClass('active');
         $(this).addClass('active');
-        $('#sergio.weather-item.'+day).addClass('active');
+        $('.itemSergio.'+day).addClass('active');
     });
 
 
