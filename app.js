@@ -102,12 +102,6 @@ app.listen(port, function() {
 
 // Run Server 
 
-// app.get('/', function(req, res) {
-// 	res.writeHead(200, {
-// 		'Content-Type': 'text/plain'
-// 	});
-// 	res.end('Temperature Monitor App');
-// });
 
 app.use(express.static(__dirname + '/public/bootstrap'));
 
@@ -199,10 +193,6 @@ app.get('/test/:id', function(req, res, next) {
 
 	res.json(dA_inside);
 });
-
-// app.get('/save', function(req, res) {
-// 	res.send("Incomplete request. Missing the User & Temp");
-// });
 
 app.get('/save/:id', function(req, res) {
 	res.send("Incomplete request. Missing Temp");
@@ -331,7 +321,6 @@ app.get('/:id/last', function(req, res) {
 	})
 	
 });
-
 
 // Weather API
 function getWeatherApi(userID, callback) {
