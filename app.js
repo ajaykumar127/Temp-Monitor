@@ -12,8 +12,8 @@ process.env.MONGOHQ_URL ||
 
 var theport = process.env.PORT || 5000;
 
-//mongoose.connect('mongodb://temp-monitor.herokuapp.com');
-mongoose.connect('mongodb://localhost/Temp-Monitor');
+mongoose.connect('mongodb://temp-monitor.herokuapp.com');
+//mongoose.connect('mongodb://localhost/Temp-Monitor');
 
 	var db = mongoose.connection;
 	db.on('error', console.error.bind(console, 'connection error:'));
