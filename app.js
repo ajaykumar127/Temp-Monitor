@@ -12,7 +12,9 @@ process.env.MONGOHQ_URL ||
 
 var theport = process.env.PORT || 5000;
 
-mongoose.connect('mongodb://temp-monitor.herokuapp.com');
+//mongoose.connect('mongodb://temp-monitor.herokuapp.com');
+mongoose.connect('mongodb://localhost/Temp-Monitor');
+
 	var db = mongoose.connection;
 	db.on('error', console.error.bind(console, 'connection error:'));
 	db.once('open', function callback () {
@@ -58,8 +60,14 @@ app.listen(port, function() {
 // 	res.end('Temperature Monitor App');
 // });
 
+app.use(express.static(__dirname + '/public/bootstrap'));
+
 app.get('/', function(request, response){
-  response.sendfile(__dirname + "/public/js/index.html");
+  response.sendfile(__dirname + "/public/bootstrap/index.html");
+});
+
+app.get('/user', function(request, response){
+  response.sendfile(__dirname + "/public/bootstrap/user.html");
 });
 
 // app.get('/save', function(req, res) {
