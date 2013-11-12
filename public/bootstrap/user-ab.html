@@ -24,11 +24,23 @@
 <!-- scripts -->
 <script src="../js/general.js"></script>
 
+
 <script type="text/javascript" src="../js/jquery.flot.js"></script>
 <script type="text/javascript" src="../js/jquery.flot.resize.js"></script>
 <script type="text/javascript" src="../js/jquery.flot.categories.js"></script>
 <script type="text/javascript">
-    $(function() {
+
+  $.ajax({
+	  url: '/test/ab', complete: function(data) {
+	  
+		  var myObject = JSON.parse(data.responseText);
+		  console.log(myObject);
+		  
+		  
+		  $(function() {
+    
+  
+
         var graphwidth = $('.widget_graph .inner').width();
         $('.widget_graph .graph').css('height', parseInt(graphwidth/1.7));
         $(window).resize(function() {
@@ -47,7 +59,7 @@
         var graphholderDonna = $("#graphDonna");
         var graphholderSergio = $("#graphSergio");
        
-        var plotA = $.plot(graphholderAllison, [dA_inside, dA_outside], {
+        var plotA = $.plot(graphholderAllison, [myObject, dA_outside], {
          	colors: ["#437777"],
             xaxis: {
             	mode: "categories",
@@ -186,16 +198,12 @@
         });
               
     });
-</script>
-<script>
-	$.ajax({
-  url: '/test/ab',
-  complete: function(data) {
-    console.log(data);
-  }
-});
+
+	  }
+	});
 	
-</script>
+    </script>
+
     <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDi4LZ13kUu7dwTqQGqMjNaG-WFa3S34M8&sensor=true">
     </script>

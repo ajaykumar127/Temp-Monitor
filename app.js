@@ -15,7 +15,7 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function callback() {
 	// yay!
-	console.log("Database connection OK");
+	console.log("Database connection Opened OK");
 	
 	var filter = {}; // no filter
 	var fields = 'timestamp user inTemp outTemp'
@@ -114,19 +114,20 @@ app.use(express.static(__dirname + '/public/bootstrap'));
 app.get('/', function(request, response) {
 	response.sendfile(__dirname + "/public/bootstrap/index.html");
 });
-
-app.get('/user', function(request, response) {
-	response.sendfile(__dirname + "/public/bootstrap/index.html");
+app.get('/user/ab', function(request, response) {
+	response.sendfile(__dirname + "/public/bootstrap/user-ab.html");
 });
-
-app.get('/user/:id', function(request, response) {
-	response.sendfile(__dirname + "/public/bootstrap/user.html");
+app.get('/user/dm', function(request, response) {
+	response.sendfile(__dirname + "/public/bootstrap/user-dm.html");
+});
+app.get('/user/sm', function(request, response) {
+	response.sendfile(__dirname + "/public/bootstrap/user-sm.html");
 });
 
 app.get('/userlist', function(req, res) {
 	console.log("userList");
 	
-var filter = {}; // no filter
+	var filter = {}; // no filter
 	var fields = 'timestamp user inTemp outTemp'
 	
 	astronautModel.find(filter, fields, function(err, astronauts){
@@ -147,12 +148,66 @@ var filter = {}; // no filter
 	})
 
 });
+
+app.get('/test/:id', function(req, res, next) {
+
+	var filter = {}; // no filter
+	var fields = 'user';
+	var tempUser = (req.params.id).toUpperCase();
+	
+	console.log("[TEST] try and find records for " + tempUser);
+	
+	astronautModel.find({user: tempUser}, function(err, astronauts){
+		if (err) {
+		    console.error('uhoh something went wrong');
+		    console.error(err);
+		}
+		if (astronauts == null) {
+		    console.log("No records found");
+		} else {
+		    console.log("Found " + astronauts.length + " records");
+
+		 
+		 console.log(astronauts[0].inTemp);
+		console.log(astronauts[1].inTemp);
+		console.log(astronauts[2].inTemp);
+		console.log(astronauts[3].inTemp);
+// We could loop over each record and do something with them.
+		    for(a in astronauts) {		    
+		        var currAstro = astronauts[astronauts.length-1];
+		        console.log(currAstro.user + " " + currAstro.inTemp + " " + currAstro.outTemp);
+		        break;
+		    }
+		    
+		 
+	
+		}
+	//res.set('Content-Type', 'application/javascript');
+	//res.send('testPage', astronauts);
+
+	})
+	
+	
+		var dA_inside  = [
+		 ["Mon", 90], 
+		 ["Tue", 80], 
+		 ["Wed", 83], 
+		 ["Thu", 88], 
+		 ["Fri", 84], 
+		 ["Sat", 82], 
+		 ["Sun", 90] ];
+
+	res.json(dA_inside);
+});
+
 // app.get('/save', function(req, res) {
 // 	res.send("Incomplete request. Missing the User & Temp");
 // });
+
 app.get('/save/:id', function(req, res) {
 	res.send("Incomplete request. Missing Temp");
 });
+
 app.get('/save/:id/:temp', function(req, res) {
 	// set variables for current request
 	var timestamp = (new Date()).getTime();
@@ -271,7 +326,7 @@ app.get('/:id/last', function(req, res) {
 		    }
 		}
 	res.set('Content-Type', 'application/javascript');
-  res.send('testPage', currAstro);
+	res.send('testPage', currAstro);
 
 	})
 	
