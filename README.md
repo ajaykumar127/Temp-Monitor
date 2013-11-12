@@ -1,6 +1,7 @@
-Temp Monitor
+[Temp Monitor](https://temp-monitor.herokuapp.com/)
 ============
 
+Website: [https://temp-monitor.herokuapp.com/](https://temp-monitor.herokuapp.com/)
 Is your temperature at the legal limit?
 
 This is a networked temperature monitor for Tom Igoe's [Understanding Networks](itp.nyu.edu/understandingnetworks/Class/Fall2013) class. 
