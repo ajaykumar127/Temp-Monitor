@@ -283,8 +283,8 @@ app.get('/:id', function(req, res) {
 		        break;
 		    }
 		}
-	res.set('Content-Type', 'application/javascript');
-  res.send('testPage', astronauts);
+   //res.set('Content-Type', 'application/javascript');
+  res.send(astronauts);
 
 	})
 	
@@ -315,8 +315,9 @@ app.get('/:id/last', function(req, res) {
 		        break;
 		    }
 		}
-	res.set('Content-Type', 'application/javascript');
-	res.send('testPage', currAstro);
+	//res.set('Content-Type', 'application/javascript');
+	res.send(currAstro);
+	//res.send("Incomplete request. Missing Temp");
 
 	})
 	
