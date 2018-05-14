@@ -11,12 +11,12 @@ This project includes:
 
 *	Arduino sketches - [setup instructions](https://github.com/sergiomajluf/Temp-Monitor/wiki/How-to-set-up-the-Arduino) on wiki page
 *	Express JS, Node and Socket.io for server side websockets
-*	[Mongoose](mongoosejs.com) and MongoDB as the database
+*	[Postgress] as the database
 *	[Forecast.io](https://developer.forecast.io) as the weather API
 
 The server expects RESTful HTTP calls to trigger saving and querying events: `<server address>/save/ID/temp`
 
-Project made by [Sergio](https://github.com/sergiomajluf), [Donna](https://github.com/dcmillerwatts) and [Allison](https://github.com/allisonburtch).
+Project made by Vineet and Ajay - Salesforce
 
 
 Website: [https://temp-monitor.herokuapp.com/](https://temp-monitor.herokuapp.com/)
